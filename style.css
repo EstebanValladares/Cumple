@@ -1,33 +1,41 @@
-body {
+/* Reset básico */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #6a11cb, #2575fc);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px; /* espacio lateral en móviles */
 }
 
 .form-container {
   background: #fff;
-  padding: 30px 40px;
+  padding: 25px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   text-align: center;
-  width: 350px;
+  width: 100%;        /* ocupa todo el ancho disponible */
+  max-width: 480px;   /* límite superior para pantallas grandes */
 }
 
 h1 {
   color: #333;
   margin-bottom: 20px;
+  font-size: 1.8rem; /* más grande para que se vea bien */
 }
 
 input {
   display: block;
   width: 100%;
-  margin: 10px 0;
-  padding: 12px;
+  margin: 12px 0;
+  padding: 14px;      /* inputs más grandes para tocar en móviles */
   border: 2px solid #ddd;
   border-radius: 8px;
   font-size: 16px;
@@ -41,8 +49,8 @@ input:focus {
 
 button {
   width: 100%;
-  padding: 12px;
-  margin-top: 15px;
+  padding: 14px;
+  margin-top: 18px;
   background: #2575fc;
   border: none;
   border-radius: 8px;
@@ -60,4 +68,20 @@ button:hover {
   color: red;
   font-size: 14px;
   margin-top: 10px;
+}
+
+/* 📱 Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  input, button {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
 }
